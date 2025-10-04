@@ -1,36 +1,37 @@
-class Stack:
+class Queue:
   def __init__(self):
-    self.stack = []
+    self.queue = []
+    
+  def enqueue(self, element):
+    self.queue.append(element)
 
-  def push(self, element):
-    self.stack.append(element)
-
-  def pop(self):
+  def dequeue(self):
     if self.isEmpty():
-      return "Stack is empty"
-    return self.stack.pop()
+      return "Queue is empty"
+    return self.queue.pop(0)
 
   def peek(self):
     if self.isEmpty():
-      return "Stack is empty"
-    return self.stack[-1]
+      return "Queue is empty"
+    return self.queue[0]
 
   def isEmpty(self):
-    return len(self.stack) == 0
+    return len(self.queue) == 0
 
   def size(self):
-    return len(self.stack)
+    return len(self.queue)
 
-# Create a stack
-myStack = Stack()
+# Create a queue
+myQueue = Queue()
 
-myStack.push('A')
-myStack.push('B')
-myStack.push('C')
+myQueue.enqueue('A')
+myQueue.enqueue('B')
+myQueue.enqueue('C')
 
-print("Stack: ", myStack.stack)
-print("Pop: ", myStack.pop())
-print("Stack after Pop: ", myStack.stack)
-print("Peek: ", myStack.peek())
-print("isEmpty: ", myStack.isEmpty())
-print("Size: ", myStack.size())
+print("Queue: ", myQueue.queue)
+print("Peek: ", myQueue.peek())
+print("Dequeue: ", myQueue.dequeue())
+print("Queue after Dequeue: ", myQueue.queue)
+print("isEmpty: ", myQueue.isEmpty())
+print("Size: ", myQueue.size())
+
